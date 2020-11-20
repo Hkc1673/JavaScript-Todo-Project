@@ -12,7 +12,18 @@ eventListeners();
 function eventListeners() {
     form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", loadAllTodos);
+    secondCardBody.addEventListener("click", deleteTodo);
 
+
+}
+
+function deleteTodo(e) {
+
+    if (e.target.className === "fa fa-remove"){
+        e.target.parentElement.parentElement.remove();
+        showAlert("success", "Deleted Todo...");
+    }
+    
 }
 
 function loadAllTodos() {
@@ -32,7 +43,7 @@ function addTodo(e){
     else {
         addTodoList(newTodo);
         addTodoToStorage(newTodo);
-        showAlert("success", "Added Todo");
+        showAlert("success", "Added Todo...");
     }
 
     e.preventDefault();

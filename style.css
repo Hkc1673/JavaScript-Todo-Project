@@ -16,12 +16,14 @@ body {
     border: solid 3px silver;
     border-radius: 10px;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 .card-header {
     background-color: #F7F7F7;
     padding: 20px;
     width: 720px;
+    font-size: x-large;
 }
 
 
@@ -92,6 +94,7 @@ hr{
     padding: 10px 20px;
     margin: 10px;
     border-radius: 10px;
+    color: blue;
 }
 
 #dlt {
@@ -106,14 +109,14 @@ hr{
     padding: 10px 20px;
     margin: 10px;
     border-radius: 10px;
-    background-color: rgb(255, 196, 209);
-    color: darkgrey;
+    background-color: red;
+    color: white;
 }
 
 .alert-success{
     padding: 10px 20px;
     margin: 10px;
     border-radius: 10px;
-    background-color: green;
-    color: darkgrey;
+    background-color: MediumSeaGreen;
+    color: white;
 }
