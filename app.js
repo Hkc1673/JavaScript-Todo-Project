@@ -20,10 +20,24 @@ function eventListeners() {
 function deleteTodo(e) {
 
     if (e.target.className === "fa fa-remove"){
-        e.target.parentElement.parentElement.remove();
+       let delItem = e.target.parentElement.parentElement;
+       delItem.remove();
+       deletedTodoFromStorage(delItem.textContent)
         showAlert("success", "Deleted Todo...");
     }
     
+}
+
+function deletedTodoFromStorage(deltodo) {
+    let todos = getTodosFromStorage();
+
+    todos.forEach(function(todo, index) {
+        if (todo === deltodo){
+            todos.splice(index, 1);
+        }
+    })
+
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function loadAllTodos() {

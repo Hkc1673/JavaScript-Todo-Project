@@ -48,6 +48,7 @@ body {
     background-color: silver;
     color: #DC3545;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .card-body{
