@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -18,7 +19,7 @@
                                 <input class="form-control" type="text" name="todo" id = "todo" placeholder="Bir Todo Girin">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-danger">Todo Ekleyin</button>
+                        <button type="submit" class="btn btn-danger">Add Todo</button>
                     </form>
                     <hr>
                     
@@ -27,19 +28,19 @@
          
              <div class="card-body">
                     <hr>
-                    <h5 class="card-title" id = "tasks-title">Todolar</h5>
+                    <h5 class="card-title" id = "tasks-title">Todos</h5>
                     <div class="form-row">
                             <div class="form-group">
-                                <input class="form-control" type="text" name="filter" id = "filter" placeholder="Bir Todo Arayın">
+                                <input class="form-control" type="text" name="filter" id = "filter" placeholder="Search a todo...">
                             </div>
                     </div>
 
                     <hr>
                     <ul class="list-group">
-                        <!-- <li class="list-group-item d-flex justify-content-between">
+                        <!-- <li class="list-group-item">
                             Todo 1
                             <a href = "#" class ="delete-item">
-                                <i class = "fa fa-remove"></i>
+                                <i class = "fa fa-remove" id="dlt"></i>
                             </a>
 
                         </li>-->
@@ -47,7 +48,7 @@
                         
                     </ul>
                     <hr>  
-                    <a id = "clear-todos" class="btn btn-dark" href="#">Tüm Taskları Temizleyin</a>               
+                    <a id = "clear-todos" class="btn btn-dark" href="#">Clear All Todos</a>               
                 </div>
               </div>
         

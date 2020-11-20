@@ -40,12 +40,13 @@ body {
     font-size: 14px;
     border: none;
     border-radius: 5px;
-    transition: width 1ms, height 1ms;
+    
 }
 
 .btn:hover {
-    width: 125px;
-    height: 30px;
+    background-color: silver;
+    color: #DC3545;
+    font-weight: bold;
 }
 
 .card-body{
@@ -68,4 +69,22 @@ body {
 hr{
     margin: 30px;
     color: silver;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    border: solid 1px silver;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#dlt {
+    color: red;
+}
+
+#dlt:hover{
+    color: mediumslateblue;
 }
