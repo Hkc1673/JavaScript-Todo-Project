@@ -11,6 +11,16 @@ eventListeners();
 
 function eventListeners() {
     form.addEventListener("submit", addTodo);
+    document.addEventListener("DOMContentLoaded", loadAllTodos);
+
+}
+
+function loadAllTodos() {
+    let todos = getTodosFromStorage();
+
+    todos.forEach(function(todo) {
+        addTodoList(todo);
+    });
 }
 
 function addTodo(e){
@@ -20,11 +30,33 @@ function addTodo(e){
         showAlert("danger", "Please enter a todo!");
     }
     else {
-        showAlert("success", "Added Todo");
         addTodoList(newTodo);
+        addTodoToStorage(newTodo);
+        showAlert("success", "Added Todo");
     }
 
     e.preventDefault();
+}
+
+function getTodosFromStorage() {
+    let todos;
+
+    if (localStorage.getItem("todos") === null){
+        todos = [];
+    }
+    else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+    return todos;
+}
+
+function addTodoToStorage(newTodo) {
+    let todos = getTodosFromStorage();
+
+    todos.push(newTodo);
+
+    localStorage.setItem("todos",JSON.stringify(todos));
+    
 }
 
 function showAlert(type, message) {
@@ -36,7 +68,9 @@ function showAlert(type, message) {
     alertBox.appendChild(alertText);
     firstCardBody.appendChild(alertBox)
 
-    console.log(alertBox)
+    setTimeout(function() {
+        alertBox.remove();
+    },1500);
 
 }
 
