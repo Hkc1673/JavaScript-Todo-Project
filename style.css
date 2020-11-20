@@ -88,3 +88,21 @@ hr{
 #dlt:hover{
     color: mediumslateblue;
 }
+
+.alert-danger{
+    border: solid 1px silver;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 196, 209);
+    color: darkgrey;
+}
+
+.alert-success{
+    border: solid 1px silver;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: green;
+    color: darkgrey;
+}

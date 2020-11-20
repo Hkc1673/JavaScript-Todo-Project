@@ -16,12 +16,29 @@ function eventListeners() {
 function addTodo(e){
     const newTodo = todoInput.value.trim();
 
-    addTodoList(newTodo);
+    if (newTodo === ""){
+        showAlert("danger", "Please enter a todo!");
+    }
+    else {
+        showAlert("success", "Added Todo");
+        addTodoList(newTodo);
+    }
 
     e.preventDefault();
 }
 
+function showAlert(type, message) {
+    
+    const alertBox = document.createElement("div");
+    alertBox.className = `alert alert-${type}`
+    const alertText = document.createElement("p");
+    alertText.textContent = message;
+    alertBox.appendChild(alertText);
+    firstCardBody.appendChild(alertBox)
 
+    console.log(alertBox)
+
+}
 
 function addTodoList(newTodo) {
     
@@ -37,9 +54,8 @@ function addTodoList(newTodo) {
 
     todoInput.value = ""
 
-    console.log(listItem);
-
-
 }
+
+
 
 
