@@ -13,8 +13,32 @@ function eventListeners() {
     form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", loadAllTodos);
     secondCardBody.addEventListener("click", deleteTodo);
+    filter.addEventListener("keyup", filterTodos);
+    clearButton.addEventListener("click", clearAllTodos);
+}
 
+function clearAllTodos() {
+    const listItems = document.querySelectorAll(".list-group-item");
+    if (confirm("Are you sure !")){
+        todoList.remove(listItems);
+    }
+    localStorage.removeItem("todos");
+}
 
+function filterTodos(e) {
+    const filterValue = e.target.value.toLowerCase();
+    const listItems = document.querySelectorAll(".list-group-item");
+
+    listItems.forEach(function(listItem) {
+        const text = listItem.textContent.toLowerCase();
+        if (text.indexOf(filterValue) === -1){
+            listItem.setAttribute("style", "display : none");
+        }
+        else {
+            listItem.setAttribute("style", "display : flex");
+        }
+
+    })
 }
 
 function deleteTodo(e) {
